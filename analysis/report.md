@@ -1,6 +1,6 @@
 # Egg Production System vs Cage-Free Progress — Spanish Retailers
 
-*Scraped: 2026-05-10 11:49:30*
+*Scraped: 2026-05-10 15:52:45*
 
 ![Production system mix](production_mix.png)
 
