@@ -27,10 +27,10 @@ SYSTEMS = ['caged', 'barn', 'free_range', 'organic']
 # All four committed to 100% cage-free by 2025.
 # Sources: retailer press releases; Animal Welfare Observatory (OBA); EggTrack 2024 (CIWF).
 COMMITMENTS = {
-    'Mercadona': {'reported_pct': 65,   'reported_year': 2024, 'third_party': 'Not reported'},
-    'DIA':       {'reported_pct': None, 'reported_year': None, 'third_party': 'Behind ✗'},
-    'Eroski':    {'reported_pct': None, 'reported_year': None, 'third_party': 'Behind ✗'},
-    'Alcampo':   {'reported_pct': 63,   'reported_year': 2023, 'third_party': 'Behind ✗'},
+    'Mercadona': {'reported_pct': 65,   'reported_year': 2024},
+    'DIA':       {'reported_pct': None, 'reported_year': None},
+    'Eroski':    {'reported_pct': 35, 'reported_year': 2018},
+    'Alcampo':   {'reported_pct': 63,   'reported_year': 2023},
 }
 
 
@@ -104,8 +104,7 @@ def build_report(df: pd.DataFrame) -> str:
             'Organic %': f"{sys_pct['organic']:.0f}%",
             'Listed cage-free %': f"{listed_cf:.0f}%",
             'Reported cage-free %': reported,
-            'As of': rep_year,
-            'Third-party status': c.get('third_party', '—'),
+            'As of': rep_year
         })
 
     table = pd.DataFrame(rows)
@@ -132,10 +131,10 @@ def build_report(df: pd.DataFrame) -> str:
         '(pack quantity × SKUs) that is free-range or organic. '
         'Does not reflect actual sales weighting.',
         '',
-        '**Reported cage-free %** = most recent self-reported figure for fresh eggs. '
+        '**Reported cage-free %** = most recent self-reported figure for egg sales. '
         'Sources: retailer press releases; Animal Welfare Observatory (OBA); EggTrack 2024 (CIWF).',
         '',
-        'All four retailers committed to 100% cage-free by 2025.',
+        '**Note**: listed cage-free % likely does not reflect actual sales volume, so is not a reliable metric of % cage-free sales.',
     ]
     return '\n'.join(lines) + '\n'
 
@@ -153,11 +152,11 @@ def main():
     out.parent.mkdir(parents=True, exist_ok=True)
     plot_production_mix(df, out.parent / 'production_mix.png')
     out.write_text(build_report(df))
-    print(f'→ {out}')
+    print(f'{out}')
 
     csv_path = out.parent / 'data.csv'
     df.drop(columns=['scraped_at']).to_csv(csv_path, index=False)
-    print(f'→ {csv_path}')
+    print(f'{csv_path}')
 
 
 if __name__ == '__main__':
