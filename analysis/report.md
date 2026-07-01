@@ -1,14 +1,14 @@
 # Egg Production System vs Cage-Free Progress — Spanish Retailers
 
-*Scraped: 2026-05-10 15:52:45*
+*Scraped: 2026-07-01 09:29:03*
 
 ![Production system mix](production_mix.png)
 
 | Retailer  | Caged % | Barn % | Free-range % | Organic % | Listed cage-free % | Reported cage-free % | As of |
 | --------- | ------- | ------ | ------------ | --------- | ------------------ | -------------------- | ----- |
-| Alcampo   | 16%     | 45%    | 34%          | 6%        | 40%                | 63%                  | 2023  |
-| DIA       | 44%     | 34%    | 18%          | 5%        | 23%                | —                    | —     |
-| Eroski    | 75%     | 16%    | 5%           | 3%        | 8%                 | 35%                  | 2018  |
+| Alcampo   | 20%     | 42%    | 32%          | 6%        | 38%                | 63%                  | 2023  |
+| DIA       | 48%     | 38%    | 9%           | 5%        | 14%                | —                    | —     |
+| Eroski    | 75%     | 16%    | 6%           | 3%        | 8%                 | 35%                  | 2018  |
 | Mercadona | 83%     | 0%     | 17%          | 0%        | 17%                | 65%                  | 2024  |
 
 **Listed cage-free %** = share of catalog-listed egg units (pack quantity × SKUs) that is free-range or organic. Does not reflect actual sales weighting.
